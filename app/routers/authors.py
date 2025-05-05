@@ -10,7 +10,7 @@ router = APIRouter(
 
 @router.post("/", response_model=schemas.AuthorOut)
 def create_author(author: schemas.AuthorCreate, db: Session = Depends(get_db)):
-    db_author = models.Author(**author.dict())
+    db_author = models.Author(**author.model_dump())
     db.add(db_author)
     db.commit()
     db.refresh(db_author)

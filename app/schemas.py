@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, ConfigDict
 
 class UserCreate(BaseModel):
     username: str
@@ -9,8 +9,7 @@ class UserOut(BaseModel):
     id: int
     username: str
     email: EmailStr
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class AuthorBase(BaseModel):
     name: str
@@ -21,8 +20,7 @@ class AuthorCreate(AuthorBase):
 
 class AuthorOut(AuthorBase):
     id: int
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class BookBase(BaseModel):
     title: str
@@ -35,8 +33,7 @@ class BookCreate(BookBase):
 
 class BookOut(BookBase):
     id: int
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class Token(BaseModel):
     access_token: str

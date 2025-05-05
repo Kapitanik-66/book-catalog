@@ -15,7 +15,7 @@ def create_book(
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)  # Защищённый эндпоинт
 ):
-    db_book = models.Book(**book.dict())
+    db_book = models.Book(**book.model_dump())
     db.add(db_book)
     db.commit()
     db.refresh(db_book)
