@@ -1,0 +1,7 @@
+************* Module app.main
+app\main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app\main.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 8.18/10 (previous run: 8.18/10, +0.00)
+
